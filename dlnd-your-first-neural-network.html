@@ -16299,6 +16299,22 @@ OK
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Feedback</strong></p>
+<p>Excellent job tuning the model. You're right that the model fails around Christmas. Let's expand your analysis a little bit. In your opinion, why does the model fail to predict Christmas bike sharing traffic? It correctly predicts daily traffic variation, right? higher during the day and lower during the night. So what's different about Christmas period and what can we do, beside parameter tuning, to help the model predict better during Christmas period?</p>
+<ul>
+<li>The model fails to predict Christmas bike sharing traffic because the average daily volume decreases substantially. The data description said that people use bikes to go to work a lot - so that demand falls away. The model predicts the day vs night traffic variation correctly because that pattern occurs every day (= a lot of learning). However, this is not the case for daily volume data. I would expect similarly low accuracy around state holidays and weekends.</li>
+<li>What can we do? Get more years of data. In the existing training data, the Christmas seasonality only appears once, so it's pretty much impossible for the network to pick up on it. What else?</li>
+<li>General comment: it's pretty useless to consider weather data for real world predictions, because you don't have reliable data for roughly 7 days ahead, right?</li>
+</ul>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
